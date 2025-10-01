@@ -2,15 +2,18 @@ pipeline {
     agent none
     stages {
         stage('Diag') {
-          steps {
-            sh '''
-              set -x
-              whoami
-              id
-              ls -l /var/run/docker.sock || true
-              docker version || true
-            '''
-          }
+            agent {
+                docker { image 'php:8.2-cli' }
+            }
+            steps {
+                sh '''
+                  set -x
+                  whoami
+                  id
+                  ls -l /var/run/docker.sock || true
+                  docker version || true
+                '''
+              }
         }
         stage('Checkout') {
             agent {

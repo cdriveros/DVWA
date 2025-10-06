@@ -7,6 +7,7 @@ pipeline {
             }
           steps {
                 sh '''
+                 set -x
                whoami
             '''
   }

@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Diag Docker') {
              agent {
-                docker { image 'php:8.2-cli - holaaaaaaaaaaaaa' }
+                docker { image 'php:8.2-cli' }
             }
           steps {
                 sh '''

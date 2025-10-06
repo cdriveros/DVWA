@@ -7,14 +7,7 @@ pipeline {
             }
           steps {
                 sh '''
-                set -x
-              whoami
-              id
-              ls -ld /Users/carlos.riveros /Users/carlos.riveros/.docker /Users/carlos.riveros/.docker/run
-              ls -l  /Users/carlos.riveros/.docker/run/docker.sock
-              printenv | grep -E 'DOCKER_HOST|HOME'
-              docker version
-              docker run --rm hello-world
+               whoami
             '''
   }
 }
